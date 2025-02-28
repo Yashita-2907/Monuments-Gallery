@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monuments Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="text-center">Monuments Gallery</h2>
+
+        <!-- Buttons -->
+        <div class="d-flex justify-content-between mb-3">
+            <button class="btn btn-success" onclick="openAddModal()">Add Monument</button>
+            <input type="text" id="searchBox" class="form-control w-50" placeholder="Search by monument name..." onkeyup="searchMonuments()">
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="row" id="monumentGrid">
+            <!-- Monuments will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Add/Edit Monument Modal -->
+    <div class="modal fade" id="monumentModal" tabindex="-1" aria-labelledby="monumentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="monumentModalLabel">Add/Edit Monument</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="monumentIndex">
+                    <label>Monument Name:</label>
+                    <input type="text" id="monumentName" class="form-control mb-2">
+                    <label>Description:</label>
+                    <textarea id="monumentDescription" class="form-control mb-2"></textarea>
+                    <label>City:</label>
+                    <input type="text" id="monumentCity" class="form-control mb-2">
+                    <label>Image URL:</label>
+                    <input type="text" id="monumentImage" class="form-control mb-2">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveMonument()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+`
